@@ -1,0 +1,14 @@
+# Cloudflare Pages reads this file. Images and fonts get a week of browser
+# caching; the page itself is always revalidated so edits show up immediately.
+# If you replace an image, visitors may see the old one for up to a week --
+# rename the file (logo-2.webp) to push it through straight away.
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+/fonts/*
+  Cache-Control: public, max-age=604800
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

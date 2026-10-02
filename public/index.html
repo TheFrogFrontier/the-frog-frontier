@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<!--
+  THE FROG FRONTIER
+  =================================================================
+  SETUP: everything you need to change is marked with a comment.
+  Search for SHOPIFY_CONFIG, PRODUCT_ID, VIDEO_ID, FORM_ACTION and EMAIL.
+  Full instructions are in README.md.
+  =================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Frog Frontier &mdash; printable care guides, 3D files and videos for frog keepers</title>
+<meta name="description" content="Printable care handbooks and logs, 3D printable terrarium accessories, and videos for people who keep frogs. Instant downloads.">
+<meta name="theme-color" content="#efeee9">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:title" content="The Frog Frontier">
+<meta property="og:description" content="Printable care guides, 3D files and videos for frog keepers.">
+<!-- OG_IMAGE: change to your real domain once the site is live -->
+<meta property="og:image" content="https://YOUR-DOMAIN.com/assets/logo-700.jpg">
+<meta property="og:type" content="website">
+
+<link rel="preload" href="fonts/SpecialElite-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+/* fonts served from this folder, not a CDN. Special Elite is Apache 2.0,
+   Poppins and Caveat are SIL OFL. License files are in /fonts. */
+@font-face{font-family:'Special Elite';src:url('fonts/SpecialElite-Regular.woff2') format('woff2');font-weight:400;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('fonts/Poppins-Light.woff2') format('woff2');font-weight:300;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('fonts/Poppins-Regular.woff2') format('woff2');font-weight:400;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('fonts/Poppins-Medium.woff2') format('woff2');font-weight:500;font-display:swap;}
+@font-face{font-family:'Caveat';src:url('fonts/Caveat.woff2') format('woff2');font-weight:400 700;font-display:swap;}
+
+/* ============================================================ tokens
+   Every color here is sampled from the logo drawing itself:
+   the paper, the graphite, and the green of the typed wordmark. */
+:root{
+  --paper:#efeee9;
+  --panel:#e4e2da;
+  --card:#f7f6f2;
+  --ink:#2b2a26;
+  --graphite:#5f5e58;
+  --green:#283f09;
+  --green-mid:#3d5c15;
+  --rule:#c3c1b8;
+  --faint:#dbd8cf;
+  --pen:#2c4d7a;
+
+  --type:'Special Elite','Courier New',monospace;
+  --body:'Poppins','Helvetica Neue',Arial,sans-serif;
+  --hand:'Caveat','Segoe Script',cursive;
+
+  --measure:34rem;
+  --gutter:clamp(1.25rem,5vw,4rem);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}
+}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-weight:300;
+  font-size:clamp(1rem,.97rem + .18vw,1.07rem);line-height:1.68;
+}
+img{max-width:100%;height:auto;display:block;}
+
+/* Pencil foliage sits on a fixed layer behind everything. Anchored to the
+   bottom at full width, so it behaves the same at 320px as at 2560px
+   instead of zooming into an empty middle the way `cover` would. */
+.leaves{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:var(--paper) url('assets/foliage.webp') no-repeat bottom center;
+  background-size:100% auto;}
+a{color:var(--green-mid);text-underline-offset:3px;}
+:focus-visible{outline:2.5px solid var(--green);outline-offset:3px;border-radius:2px;}
+
+.wrap{max-width:70rem;margin-inline:auto;padding-inline:var(--gutter);}
+.band{padding-block:clamp(3.25rem,7.5vw,6rem);}
+.band--tint{background:rgba(217,214,200,.62);}
+.band__intro{max-width:var(--measure);}
+
+h1,h2,h3,.type{font-family:var(--type);font-weight:400;line-height:1.24;letter-spacing:.01em;}
+h2{font-size:clamp(1.45rem,1.1rem + 1.5vw,2.1rem);margin:0 0 .55em;}
+h3{font-size:1.06rem;margin:0 0 .3em;}
+p{margin:0 0 1.05em;max-width:var(--measure);}
+p:last-child{margin-bottom:0;}
+
+.tag{font-family:var(--type);font-size:.71rem;letter-spacing:.07em;color:var(--graphite);
+  border:1px dashed var(--rule);padding:.16em .55em;border-radius:2px;display:inline-block;
+  white-space:nowrap;}
+.tag--now{color:var(--green-mid);border-color:var(--green-mid);border-style:solid;}
+
+.btn{font-family:var(--type);font-size:.92rem;text-decoration:none;cursor:pointer;
+  display:inline-block;padding:.7rem 1.25rem;border-radius:2px;border:1.5px solid transparent;}
+.btn--solid{background:var(--green);color:var(--paper);}
+.btn--solid:hover{background:var(--green-mid);}
+.btn--line{border-color:var(--rule);color:var(--ink);background:transparent;}
+.btn--line:hover{border-color:var(--green);}
+
+/* ============================================================ header */
+.masthead{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--faint);}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem;}
+.mark{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink);}
+.mark img{width:40px;height:40px;border-radius:50%;flex:none;}
+.mark b{font-family:var(--type);font-weight:400;font-size:.98rem;line-height:1.12;}
+.nav{display:flex;align-items:center;gap:clamp(.7rem,1.9vw,1.6rem);}
+.nav a{font-size:.9rem;color:var(--ink);text-decoration:none;}
+.nav a:hover{color:var(--green-mid);text-decoration:underline;}
+@media (max-width:52rem){.nav a.hide-md{display:none;}}
+@media (max-width:30rem){.mark b{font-size:.86rem;}}
+@media (max-width:25rem){
+  .nav{gap:.5rem;}
+  .nav a{font-size:.8rem;}
+  .mark img{width:33px;height:33px;}
+  .mark b{font-size:.76rem;}
+  .masthead .wrap{gap:.5rem;}
+}
+
+/* ============================================================ hero */
+.hero{padding-block:clamp(2.25rem,6vw,4.5rem);}
+.hero .wrap{display:grid;gap:clamp(2rem,5vw,3.5rem);align-items:center;
+  grid-template-columns:minmax(0,1fr);}
+@media (min-width:58rem){.hero .wrap{grid-template-columns:minmax(0,23rem) minmax(0,1fr);}}
+.hero__art{max-width:24rem;width:100%;justify-self:center;}
+.hero__art img{border-radius:2px;border:1px solid var(--faint);box-shadow:5px 6px 0 rgba(157,153,138,.22);}
+.hero h1{font-size:clamp(1.95rem,1.3rem + 3vw,3.1rem);margin:0 0 .5em;max-width:15ch;}
+.hero .lede{font-size:1.07em;max-width:33rem;color:var(--ink);}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem;}
+.hero__note{font-size:.86rem;color:var(--ink);margin-top:1.4rem;max-width:30rem;}
+
+/* ============================================================ product rows */
+.shelf{list-style:none;margin:2.25rem 0 0;padding:0;display:grid;gap:1.4rem;}
+.item{background:var(--card);border:1px solid var(--rule);border-radius:3px;
+  padding:1.45rem clamp(1.1rem,3vw,1.85rem);box-shadow:4px 4px 0 var(--faint);
+  display:grid;gap:1.3rem 2.2rem;grid-template-columns:minmax(0,1fr);}
+@media (min-width:50rem){
+  .item{grid-template-columns:minmax(0,1fr) 13rem;align-items:center;}
+  .item__buy{text-align:right;border-top:0;border-left:1px solid var(--faint);padding:0 0 0 2.2rem;}
+}
+.item__buy{border-top:1px solid var(--faint);padding-top:1rem;}
+.item__head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.65rem;margin-bottom:.45rem;}
+.item h3{color:var(--green);}
+.item p{font-size:.95rem;margin-bottom:.5rem;}
+.spec{list-style:none;margin:0;padding:0;font-size:.84rem;color:var(--graphite);
+  display:flex;flex-wrap:wrap;gap:.2rem 1.1rem;}
+.spec li{position:relative;padding-left:.92rem;}
+.spec li::before{content:'';position:absolute;left:0;top:.5em;width:.44rem;height:.44rem;
+  border:1.5px solid var(--rule);border-radius:1px;}
+.spec li.done::before{background:var(--green-mid);border-color:var(--green-mid);}
+.price{font-family:var(--type);font-size:1.35rem;display:block;line-height:1.1;}
+.price small{font-family:var(--body);font-size:.72rem;color:var(--graphite);display:block;margin-top:.28rem;}
+
+/* Shopify Buy Button mounts here. With iframe:false the button inherits
+   the page stylesheet, so it matches every other button on the site. */
+.buy{margin-top:.9rem;}
+.buy .shopify-buy__btn{font-family:var(--type);font-size:.92rem;background:var(--green);
+  color:var(--paper);border:0;border-radius:2px;padding:.7rem 1.25rem;cursor:pointer;
+  width:100%;}
+.buy .shopify-buy__btn:hover{background:var(--green-mid);}
+.buy .shopify-buy__btn-wrapper{margin:0;}
+.buy__pending{display:block;font-family:var(--type);font-size:.85rem;color:var(--graphite);
+  border:1.5px dashed var(--rule);border-radius:2px;padding:.7rem .5rem;text-align:center;}
+
+/* ============================================================ sample line */
+.sample{background:var(--card);border:1px solid var(--rule);border-radius:3px;
+  padding:1.3rem 1.5rem;box-shadow:4px 4px 0 var(--faint);max-width:26rem;}
+.sample__label{font-family:var(--type);font-size:.69rem;letter-spacing:.07em;color:var(--graphite);
+  display:block;margin-bottom:.05rem;}
+.sample__line{border-bottom:1.5px solid var(--rule);min-height:2rem;padding-left:.15rem;
+  font-family:var(--hand);font-weight:600;font-size:1.5rem;line-height:1.4;color:var(--pen);
+  margin-bottom:.95rem;}
+.sample__line:last-of-type{margin-bottom:0;}
+.sample__cap{font-family:var(--type);font-size:.68rem;color:var(--graphite);letter-spacing:.05em;
+  margin-top:1.05rem;padding-top:.65rem;border-top:1.5px dashed var(--faint);}
+
+/* ============================================================ videos */
+.films{list-style:none;margin:2.25rem 0 0;padding:0;display:grid;gap:1.6rem;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));}
+.film{background:var(--card);border:1px solid var(--rule);border-radius:3px;overflow:hidden;
+  box-shadow:4px 4px 0 var(--faint);display:flex;flex-direction:column;}
+.film__frame{position:relative;aspect-ratio:16/9;background:var(--panel);border:0;padding:0;
+  width:100%;cursor:pointer;display:block;}
+.film__frame img{width:100%;height:100%;object-fit:cover;}
+.film__play{position:absolute;inset:0;display:grid;place-items:center;}
+.film__play span{width:3.4rem;height:3.4rem;border-radius:50%;background:rgba(40,63,9,.88);
+  display:grid;place-items:center;}
+.film__play span::after{content:'';border-left:.85rem solid var(--paper);
+  border-top:.55rem solid transparent;border-bottom:.55rem solid transparent;margin-left:.22rem;}
+.film__frame:hover .film__play span{background:var(--green);}
+.film__frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.film__body{padding:1.05rem 1.15rem 1.2rem;}
+.film__body h3{font-size:1rem;color:var(--green);}
+.film__body p{font-size:.88rem;color:var(--graphite);margin:0;}
+
+/* ============================================================ notes + faq */
+.split{display:grid;gap:clamp(1.75rem,4.5vw,3.25rem);grid-template-columns:minmax(0,1fr);}
+@media (min-width:52rem){.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;}}
+.note{background:var(--card);border-left:4px solid var(--green-mid);padding:1.3rem 1.45rem;
+  border-radius:0 3px 3px 0;box-shadow:3px 3px 0 var(--faint);}
+.note + .note{margin-top:1.2rem;}
+.note h3{color:var(--green);}
+.note p{font-size:.93rem;}
+
+.signup{background:var(--card);border:1.5px dashed var(--rule);border-radius:3px;
+  padding:clamp(1.5rem,4vw,2.5rem);max-width:44rem;margin-inline:auto;text-align:center;}
+.signup p{margin-inline:auto;}
+.signup form{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center;margin-top:1.5rem;}
+.signup input{font-family:var(--body);font-weight:300;font-size:1rem;padding:.7rem .9rem;
+  flex:1 1 17rem;min-width:min(100%,17rem);border:1.5px solid var(--rule);border-radius:2px;
+  background:var(--paper);color:var(--ink);}
+.signup input::placeholder{color:#85847d;}
+.signup button{border:0;}
+.fineprint{font-size:.79rem;color:var(--graphite);margin-top:.95rem;}
+
+.faq{max-width:46rem;margin-inline:auto;}
+.faq details{border-bottom:1px solid var(--faint);}
+.faq summary{font-family:var(--type);font-size:1rem;cursor:pointer;color:var(--green);
+  padding:.9rem 2rem .9rem 0;position:relative;list-style:none;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';position:absolute;right:.2rem;top:.8rem;font-size:1.25rem;
+  line-height:1;color:var(--green-mid);}
+.faq details[open] summary::after{content:'\2013';}
+.faq details p{font-size:.93rem;padding-bottom:1.05rem;max-width:none;}
+
+.foot{border-top:1px solid var(--faint);padding-block:2.5rem 3rem;font-size:.85rem;
+  color:var(--graphite);background:rgba(239,238,233,.78);}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:1.3rem;justify-content:space-between;align-items:flex-end;}
+.foot a{color:var(--green-mid);}
+</style>
+</head>
+<body>
+<div class="leaves" aria-hidden="true"></div>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="mark" href="#top">
+      <img src="assets/frog-head.webp" alt="" width="40" height="40">
+      <b>The Frog<br>Frontier</b>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#printables">Printables</a>
+      <a href="#files">3D files</a>
+      <a href="#videos">Videos</a>
+      <a href="#about" class="hide-md">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero__art">
+        <img src="assets/logo.webp" width="900" height="900" fetchpriority="high"
+             alt="The Frog Frontier: a pencil drawing of a tree frog sitting beside a leaf.">
+      </div>
+      <div>
+        <h1>Frog care, written down.</h1>
+        <p class="lede">Printable handbooks and logs, 3D files for things that go inside
+          the tank, and videos showing how it all works. Made by one person who keeps frogs,
+          for the people who keep them and the sitters left holding the misting bottle.</p>
+        <div class="actions">
+          <a class="btn btn--solid" href="#printables">See the printables</a>
+          <a class="btn btn--line" href="#free">Get the free coloring page</a>
+        </div>
+        <p class="hero__note">Everything digital arrives by email the moment you pay.
+          Nothing ships, so nothing gets lost in the mail.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== PRINTABLES -->
+  <section class="band band--tint" id="printables">
+    <div class="wrap">
+      <div class="band__intro">
+        <h2>Printables</h2>
+        <p>Print-ready PDFs. Every file comes in US Letter and A4, in full color and an
+          ink-saver version, so it works on a good printer or a tired one at the library.</p>
+      </div>
+
+      <ul class="shelf">
+
+        <li class="item">
+          <div class="item__body">
+            <div class="item__head">
+              <h3>Frog Sitter Handbook</h3>
+              <span class="tag tag--now">Available</span>
+            </div>
+            <p>Ten pages a first-time sitter can follow without knowing anything about frogs.
+              Feeding, misting, temperature, what&rsquo;s normal, what to call you about &mdash;
+              plus a fridge card for the things they need at a glance, and a certificate for
+              the kid who did the job.</p>
+            <ul class="spec">
+              <li class="done">10 pages plus bonus card</li>
+              <li class="done">Letter and A4</li>
+              <li class="done">Ink-saver included</li>
+              <li class="done">Works for any species</li>
+            </ul>
+          </div>
+          <div class="item__buy">
+            <span class="price">$8.50<small>instant download</small></span>
+            <!-- PRODUCT_ID: paste the Shopify product ID for the handbook -->
+            <div class="buy" data-shopify-id="PRODUCT_ID_HANDBOOK">
+              <span class="buy__pending">Checkout not connected yet</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="item__body">
+            <div class="item__head">
+              <h3>Husbandry Log</h3>
+              <span class="tag tag--now">Available</span>
+            </div>
+            <p>The one you keep using. Dated rows for feeding, weight, shedding, misting and
+              tank cleaning, so when something looks off you have months of history instead
+              of a guess. Print a fresh stack whenever you run out.</p>
+            <ul class="spec">
+              <li class="done">Undated, start any month</li>
+              <li class="done">Letter and A4</li>
+              <li class="done">Ink-saver included</li>
+              <li class="done">Reprint forever</li>
+            </ul>
+          </div>
+          <div class="item__buy">
+            <span class="price">$5.00<small>instant download</small></span>
+            <!-- PRODUCT_ID: Husbandry Log -->
+            <div class="buy" data-shopify-id="PRODUCT_ID_LOG">
+              <span class="buy__pending">Checkout not connected yet</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="item__body">
+            <div class="item__head">
+              <h3>Handbook and Log together</h3>
+              <span class="tag">In the works</span>
+            </div>
+            <p>Both files in one download, cheaper than buying them separately.</p>
+            <ul class="spec"><li>Being put together</li></ul>
+          </div>
+          <div class="item__buy">
+            <a class="btn btn--line" href="#free">Notify me</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================================================== 3D FILES -->
+  <section class="band" id="files">
+    <div class="wrap">
+      <div class="band__intro">
+        <h2>3D files</h2>
+        <p>STL files for things that go inside a terrarium, designed around what a frog
+          actually does rather than what looks good on a shelf. Every one is watertight,
+          prints without supports, and comes with the settings I used.</p>
+      </div>
+
+      <ul class="shelf">
+
+        <li class="item">
+          <div class="item__body">
+            <div class="item__head">
+              <h3>Rowboat water dish</h3>
+              <span class="tag tag--now">Available</span>
+            </div>
+            <p>A shallow clinker-built dinghy for the tank floor. The notch in the transom
+              caps the water depth so it can&rsquo;t get too deep, and the open stern lets a
+              frog walk in and out instead of climbing. Plank texture is modeled into the
+              hull, and the inside is left smooth because grooves hold biofilm.</p>
+            <ul class="spec">
+              <li class="done">171 &times; 121 &times; 58 mm</li>
+              <li class="done">Holds about 250 ml</li>
+              <li class="done">No supports needed</li>
+              <li class="done">STL plus print notes</li>
+            </ul>
+          </div>
+          <div class="item__buy">
+            <span class="price">$6.00<small>STL download</small></span>
+            <!-- PRODUCT_ID: Rowboat STL -->
+            <div class="buy" data-shopify-id="PRODUCT_ID_ROWBOAT">
+              <span class="buy__pending">Checkout not connected yet</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="item__body">
+            <div class="item__head">
+              <h3>Printed rowboat, ready to use</h3>
+              <span class="tag">In the works</span>
+            </div>
+            <p>The same dish, printed here in matte PETG and shipped to you. For people who
+              want the thing rather than the file.</p>
+            <ul class="spec"><li>Waterproof PETG</li><li>Ships in the US</li></ul>
+          </div>
+          <div class="item__buy">
+            <a class="btn btn--line" href="#free">Notify me</a>
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="split" style="margin-top:clamp(2.25rem,5vw,3.25rem);">
+        <div class="note">
+          <h3>Before you print one</h3>
+          <p>Use PETG if the dish will hold standing water. Wood-fill PLA looks better but
+            needs sealing, and PLA softens in a warm tank. Print the hull at 0.12 mm layers
+            if you want the plank texture to show, and skip ironing, which flattens it out.</p>
+        </div>
+        <div class="note">
+          <h3>What the license covers</h3>
+          <p>Buying an STL lets you print as many as you like for your own tanks and for
+            friends. It doesn&rsquo;t cover printing them to sell. If you run a print shop
+            and want to, email me and we&rsquo;ll work something out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== VIDEOS -->
+  <section class="band band--tint" id="videos">
+    <div class="wrap">
+      <div class="band__intro">
+        <h2>Videos</h2>
+        <p>Short ones, mostly showing rather than talking. Nothing loads from YouTube until
+          you press play, so the page stays quick and nobody gets tracked for scrolling past.</p>
+      </div>
+
+      <ul class="films">
+        <!-- VIDEO_ID: replace each data-yt with the 11-character YouTube ID -->
+        <li class="film">
+          <button class="film__frame" data-yt="VIDEO_ID_1"
+                  aria-label="Play: Setting up a tank a sitter can manage">
+            <img src="https://i.ytimg.com/vi/VIDEO_ID_1/hqdefault.jpg" alt="" loading="lazy"
+                 onerror="this.remove()">
+            <span class="film__play"><span></span></span>
+          </button>
+          <div class="film__body">
+            <h3>A tank a sitter can manage</h3>
+            <p>What to change in the week before you leave, so someone else can keep it running.</p>
+          </div>
+        </li>
+
+        <li class="film">
+          <button class="film__frame" data-yt="VIDEO_ID_2"
+                  aria-label="Play: Printing the rowboat water dish">
+            <img src="https://i.ytimg.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="" loading="lazy"
+                 onerror="this.remove()">
+            <span class="film__play"><span></span></span>
+          </button>
+          <div class="film__body">
+            <h3>Printing the rowboat dish</h3>
+            <p>Start to finish on a bed-slinger, including the settings that make the planks read.</p>
+          </div>
+        </li>
+
+        <li class="film">
+          <button class="film__frame" data-yt="VIDEO_ID_3"
+                  aria-label="Play: Filling in the handbook">
+            <img src="https://i.ytimg.com/vi/VIDEO_ID_3/hqdefault.jpg" alt="" loading="lazy"
+                 onerror="this.remove()">
+            <span class="film__play"><span></span></span>
+          </button>
+          <div class="film__body">
+            <h3>Filling in the handbook</h3>
+            <p>Ten pages, ten minutes, and the two blanks people most often get wrong.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================================================== ABOUT -->
+  <section class="band" id="about">
+    <div class="wrap split">
+      <div>
+        <h2>Why the blanks are blank</h2>
+        <p>There is no humidity number printed anywhere in the handbook. That is deliberate,
+          and it is the thing I most want you to understand before you buy.</p>
+        <p>A White&rsquo;s tree frog, a Pacman and a dart frog want three different tanks.
+          A care sheet that fills those numbers in for you is guessing about an animal it has
+          never met. So every value in these pages is a line you write on: your species, your
+          setup, your vet. That is also why one handbook works for any frog.</p>
+        <p>What the pages give you is the structure. The right questions, in the right order,
+          in language a nervous twelve-year-old can follow at eight in the evening when the
+          frog hasn&rsquo;t eaten.</p>
+
+        <div class="sample" style="margin-top:2rem;">
+          <span class="sample__label">Species</span>
+          <div class="sample__line">White&rsquo;s tree frog</div>
+          <span class="sample__label">Feeding days</span>
+          <div class="sample__line">Tuesday and Friday</div>
+          <p class="sample__cap">you fill these in, not me</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="note">
+          <h3>Made by one person</h3>
+          <p>The frog on the cover is a pencil drawing, and the type is a battered typewriter
+            face. Both were chosen because this is a small shop and it should look like one.</p>
+        </div>
+        <div class="note">
+          <h3>Not veterinary advice</h3>
+          <p>These are organizers, not medicine. If a frog is unwell, an exotics vet is the
+            answer and no printable is. Every file says so on the first page.</p>
+        </div>
+        <div class="note">
+          <h3>Print it however you like</h3>
+          <p>At home, at the library, or at a print shop from a USB stick. Files are sized for
+            both Letter and A4 so it works wherever you are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== FREE PAGE -->
+  <section class="band band--tint" id="free">
+    <div class="wrap">
+      <div class="signup">
+        <h2>A free coloring page</h2>
+        <p>Six frogs to color in, drawn in the same pencil as the logo. Leave your email and
+          I&rsquo;ll send the PDF, plus a note when something new goes up. A few times a year
+          at most.</p>
+        <!-- FORM_ACTION: point this at Kit, Buttondown or Mailchimp. Until then it
+             opens the visitor's mail app, which works but is clumsy. -->
+        <form action="mailto:hello@thefrogfrontier.com" method="post" enctype="text/plain">
+          <label for="email" style="position:absolute;left:-9999px;">Email address</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" required>
+          <button class="btn btn--solid" type="submit">Send me the page</button>
+        </form>
+        <p class="fineprint">No spam, and you can leave any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== FAQ -->
+  <section class="band">
+    <div class="wrap faq">
+      <h2>Questions</h2>
+
+      <details>
+        <summary>How do I get the files after paying?</summary>
+        <p>A download link is emailed to you automatically as soon as the payment clears,
+          and the link stays good if you need the file again later. Check the spam folder
+          on the first one.</p>
+      </details>
+
+      <details>
+        <summary>Can I use the handbook for a frog that isn&rsquo;t a tree frog?</summary>
+        <p>Yes. Because the care values are blanks you fill in, the same handbook works for a
+          Pacman, a dart frog, a toad, or anything else you keep. If you keep more than one,
+          print a second copy of the two pages that describe an individual animal.</p>
+      </details>
+
+      <details>
+        <summary>Can I edit the PDFs?</summary>
+        <p>They&rsquo;re finished print-ready files rather than templates, so the text
+          isn&rsquo;t editable. The pages are meant to be filled in by hand, which is the
+          point when a sitter needs to scribble a note at the tank.</p>
+      </details>
+
+      <details>
+        <summary>What do I get with an STL?</summary>
+        <p>The mesh file itself, plus a short notes page with the material, layer height and
+          orientation I use. No slicer profile, because those don&rsquo;t travel well between
+          machines.</p>
+      </details>
+
+      <details>
+        <summary>I&rsquo;m a professional pet sitter. Can I hand these to clients?</summary>
+        <p>The standard license covers printing copies for your own frog and your own sitter.
+          For handing them out across a pet-sitting business, email me and I&rsquo;ll sort
+          out a commercial license.</p>
+      </details>
+
+      <details>
+        <summary>Do you take refunds?</summary>
+        <p>Digital files can&rsquo;t really be returned once they&rsquo;re delivered. But if
+          something won&rsquo;t open or prints wrong, email me and I&rsquo;ll fix it or
+          refund you.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="type">The Frog Frontier</p>
+      <p style="margin-top:.3rem;">Care guides, 3D files and videos for frog keepers.<br>
+        <!-- EMAIL -->
+        <a href="mailto:hello@thefrogfrontier.com">hello@thefrogfrontier.com</a></p>
+    </div>
+    <div>
+      <p>&copy; <span id="yr">2026</span> The Frog Frontier. Artwork and text are original.<br>
+        Not veterinary advice.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var yr = document.getElementById('yr');
+  if (yr) { yr.textContent = new Date().getFullYear(); }
+
+  /* Not every environment ships a full console. Preview panes and in-app
+     browsers often stub it with only a couple of methods, and calling a
+     missing one throws, which is worse than the message was useful. */
+  function say(kind, a, b) {
+    try {
+      var c = window.console;
+      if (!c) { return; }
+      var fn = (typeof c[kind] === 'function') ? c[kind] : c.log;
+      if (typeof fn === 'function') { fn.call(c, a, b); }
+    } catch (e) { /* logging must never be the thing that breaks */ }
+  }
+
+  /* ---------------------------------------------------------------
+     SHOPIFY_CONFIG
+     Fill these two in from your Shopify admin. Both are safe to have
+     in public code: the storefront token is read-only and is meant to
+     ship in a browser. Never put an Admin API key here.
+     --------------------------------------------------------------- */
+  var SHOPIFY_CONFIG = {
+    domain: 'YOUR-STORE.myshopify.com',
+    storefrontAccessToken: 'YOUR_STOREFRONT_ACCESS_TOKEN',
+    moneyFormat: '${{amount}}'
+  };
+
+  var SDK = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+
+  var slots = [];
+
+  /* Each block is guarded on its own. A checkout that fails to initialise
+     must not take the video players down with it, and neither should be
+     able to stop the page rendering. */
+  try {
+    slots = [].slice.call(document.querySelectorAll('.buy[data-shopify-id]'))
+      .filter(function (el) { return !/^PRODUCT_ID/.test(el.dataset.shopifyId); });
+
+    var configured = SHOPIFY_CONFIG.domain.indexOf('YOUR-STORE') === -1
+                  && SHOPIFY_CONFIG.storefrontAccessToken.indexOf('YOUR_') === -1;
+
+    if (!configured) {
+      say('info', '[Frog Frontier] Shopify not configured yet. Fill in SHOPIFY_CONFIG and each data-shopify-id.');
+    } else if (slots.length) {
+      loadScript(SDK, initShopify);
+    }
+  } catch (e) {
+    say('warn', '[Frog Frontier] checkout setup skipped:', e);
+  }
+
+  function loadScript(src, done) {
+    if (window.ShopifyBuy && window.ShopifyBuy.UI) { done(); return; }
+    var s = document.createElement('script');
+    s.async = true; s.src = src;
+    s.onload = done;
+    s.onerror = function () { say('warn', '[Frog Frontier] Shopify SDK failed to load.'); };
+    document.head.appendChild(s);
+  }
+
+  function initShopify() {
+   try {
+    var client = ShopifyBuy.buildClient({
+      domain: SHOPIFY_CONFIG.domain,
+      storefrontAccessToken: SHOPIFY_CONFIG.storefrontAccessToken
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+
+      slots.forEach(function (node) {
+        node.innerHTML = '';
+        ui.createComponent('product', {
+          id: node.dataset.shopifyId,
+          node: node,
+          moneyFormat: encodeURIComponent(SHOPIFY_CONFIG.moneyFormat),
+          options: {
+            product: {
+              /* iframe:false lets the button inherit this page's CSS,
+                 so it matches every other button on the site. */
+              iframe: false,
+              buttonDestination: 'cart',
+              contents: { img: false, title: false, price: false, options: false },
+              text: { button: 'Add to cart' }
+            }
+          }
+        });
+      });
+
+      /* One cart for the whole page, styled to the brand. */
+      ui.createComponent('cart', {
+        options: {
+          cart: {
+            startsOpen: false,
+            popup: false,
+            text: { title: 'Your cart', button: 'Checkout', total: 'Total', notice: 'Digital files are emailed to you after checkout.' },
+            styles: {
+              button: { 'font-family': 'Special Elite, monospace', 'background-color': '#283f09',
+                        ':hover': { 'background-color': '#3d5c15' },
+                        ':focus': { 'background-color': '#3d5c15' }, 'border-radius': '2px' }
+            }
+          },
+          toggle: {
+            styles: {
+              toggle: { 'font-family': 'Special Elite, monospace', 'background-color': '#283f09',
+                        ':hover': { 'background-color': '#3d5c15' },
+                        ':focus': { 'background-color': '#3d5c15' } }
+            }
+          }
+        }
+      });
+    });
+   } catch (e) { say('warn', '[Frog Frontier] checkout unavailable:', e); }
+  }
+
+  /* ---------------------------------------------------------------
+     YouTube: nothing is requested from Google until someone presses
+     play. Uses the no-cookie host so a visitor who never plays a
+     video is never tracked by it.
+     --------------------------------------------------------------- */
+  try {
+  document.querySelectorAll('.film__frame[data-yt]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.dataset.yt;
+      if (/^VIDEO_ID/.test(id)) {
+        say('info', '[Frog Frontier] Replace data-yt="' + id + '" with a real YouTube video ID.');
+        return;
+      }
+      var frame = document.createElement('iframe');
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) +
+                  '?autoplay=1&rel=0';
+      frame.title = btn.getAttribute('aria-label').replace(/^Play:\s*/, '');
+      frame.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture; web-share';
+      frame.allowFullscreen = true;
+      btn.replaceWith(frame);
+      var holder = document.createElement('div');
+      holder.className = 'film__frame';
+      frame.parentNode.insertBefore(holder, frame);
+      holder.appendChild(frame);
+    });
+  });
+  } catch (e) { say('warn', '[Frog Frontier] video players unavailable:', e); }
+
+})();
+</script>
+</body>
+</html>
