@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+  THANK-YOU PAGE for the free coloring pages.
+
+  Not linked from anywhere on the site, kept out of search results by the
+  robots meta tag below and by X-Robots-Tag in public/_headers.
+
+  This is "unlisted", not "secret": anyone who has the link can open it and
+  pass it on. That's fine for a free gift. Don't use the same trick for
+  anything you charge for.
+
+  Point your mailing-list provider's "after confirmation" / thank-you
+  redirect at:   https://thefrogfrontier.com/coloring-pages-f7k2q9/
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Your coloring pages &mdash; The Frog Frontier</title>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#efeee9">
+<link rel="preload" href="../fonts/SpecialElite-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+@font-face{font-family:'Special Elite';src:url('../fonts/SpecialElite-Regular.woff2') format('woff2');font-weight:400;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('../fonts/Poppins-Light.woff2') format('woff2');font-weight:300;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('../fonts/Poppins-Regular.woff2') format('woff2');font-weight:400;font-display:swap;}
+
+:root{
+  --paper:#efeee9; --card:#f7f6f2; --ink:#2b2a26; --graphite:#5b5e52;
+  --green:#283f09; --green-mid:#3d5c15; --rule:#c3c1b8; --faint:#dbd8cf;
+  --type:'Special Elite','Courier New',monospace;
+  --body:'Poppins','Helvetica Neue',Arial,sans-serif;
+  --gutter:clamp(1.25rem,5vw,4rem);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;
+  font-size:clamp(1rem,.97rem + .18vw,1.07rem);line-height:1.68;}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--green-mid);text-underline-offset:3px;}
+:focus-visible{outline:2.5px solid var(--green);outline-offset:3px;border-radius:2px;}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important;}}
+
+.leaves{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:var(--paper) url('../assets/foliage.webp') no-repeat bottom center;background-size:100% auto;}
+
+.wrap{max-width:62rem;margin-inline:auto;padding-inline:var(--gutter);}
+h1,h2,h3{font-family:var(--type);font-weight:400;line-height:1.24;}
+p{margin:0 0 1em;max-width:34rem;}
+
+.masthead{border-bottom:1px solid var(--faint);background:var(--paper);}
+.masthead .wrap{display:flex;align-items:center;min-height:4.25rem;}
+.mark{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink);}
+.mark img{width:40px;height:40px;border-radius:50%;}
+.mark b{font-family:var(--type);font-weight:400;font-size:.98rem;line-height:1.12;}
+
+.intro{padding-block:clamp(2.5rem,6vw,4rem) 1.5rem;}
+.intro h1{font-size:clamp(1.9rem,1.3rem + 2.6vw,2.9rem);margin:0 0 .45em;}
+.intro .lede{font-size:1.07em;}
+
+.get{background:var(--card);border:1px solid var(--rule);border-radius:3px;
+  box-shadow:4px 4px 0 var(--faint);padding:clamp(1.25rem,3vw,1.85rem);
+  display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between;}
+.get__what{margin:0;max-width:none;}
+.get__what b{font-family:var(--type);font-weight:400;color:var(--green);font-size:1.08rem;display:block;}
+.get__what span{font-size:.88rem;color:var(--graphite);}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem;}
+.btn{font-family:var(--type);font-size:.95rem;text-decoration:none;display:inline-block;
+  padding:.75rem 1.3rem;border-radius:2px;border:1.5px solid transparent;}
+.btn--solid{background:var(--green);color:var(--paper);}
+.btn--solid:hover{background:var(--green-mid);}
+.btn--line{border-color:var(--rule);color:var(--ink);background:var(--paper);}
+.btn--line:hover{border-color:var(--green);}
+.btn small{font-family:var(--body);font-size:.75rem;opacity:.8;margin-left:.35rem;}
+
+.pages{list-style:none;margin:2.25rem 0 0;padding:0;display:grid;gap:1rem;
+  grid-template-columns:repeat(2,minmax(0,1fr));}
+@media (min-width:36rem){.pages{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.15rem;}}
+@media (min-width:56rem){.pages{grid-template-columns:repeat(6,minmax(0,1fr));gap:.9rem;}}
+.pages li{background:#fff;border:1px solid var(--rule);border-radius:2px;padding:.55rem;
+  box-shadow:3px 3px 0 var(--faint);}
+.pages img{aspect-ratio:1232/1600;width:100%;object-fit:contain;}
+
+.tips{padding-block:clamp(2.5rem,6vw,3.5rem);}
+.tips h2{font-size:clamp(1.3rem,1.1rem + 1vw,1.7rem);margin:0 0 .8em;}
+.tips ul{margin:0;padding-left:1.15rem;max-width:40rem;}
+.tips li{margin-bottom:.55rem;}
+.tips li::marker{color:var(--green-mid);}
+
+.next{background:rgba(239,238,233,.82);border-top:1px solid var(--faint);padding-block:2.25rem 3rem;}
+.next p{margin-bottom:1.2rem;}
+.foot{font-size:.82rem;color:var(--graphite);margin-top:1.75rem;}
+</style>
+</head>
+<body>
+<div class="leaves" aria-hidden="true"></div>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="mark" href="/">
+      <img src="../assets/frog-head.webp" alt="" width="40" height="40">
+      <b>The Frog<br>Frontier</b>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <h1>Thanks for signing up.</h1>
+      <p class="lede">Here are your six coloring pages. Download whichever paper size your printer
+        uses, then print as many copies as you like.</p>
+
+      <div class="get">
+        <p class="get__what">
+          <b>Frog Frontier Coloring Pages</b>
+          <span>6 pages &middot; PDF &middot; about 6 MB</span>
+        </p>
+        <div class="btns">
+          <a class="btn btn--solid" href="frog-frontier-coloring-pages-letter.pdf" download>
+            Download US Letter<small>US &amp; Canada</small></a>
+          <a class="btn btn--line" href="frog-frontier-coloring-pages-a4.pdf" download>
+            Download A4<small>everywhere else</small></a>
+        </div>
+      </div>
+
+      <ul class="pages" aria-label="What's in the download">
+        <li><img src="thumbs/page-1.webp" width="520" height="675" loading="lazy" alt="A frog relaxing in a hammock under a banana leaf, with a ball of yarn"></li>
+        <li><img src="thumbs/page-2.webp" width="520" height="675" loading="lazy" alt="A frog writing in a notebook on a bromeliad"></li>
+        <li><img src="thumbs/page-3.webp" width="520" height="675" loading="lazy" alt="A frog knitting a striped scarf on a monstera leaf"></li>
+        <li><img src="thumbs/page-4.webp" width="520" height="675" loading="lazy" alt="A frog on a lily pad by a waterfall, with dragonflies"></li>
+        <li><img src="thumbs/page-5.webp" width="520" height="675" loading="lazy" alt="A frog holding a leaf over its head in the rain"></li>
+        <li><img src="thumbs/page-6.webp" width="520" height="675" loading="lazy" alt="A frog among orchids, watching a hummingbird"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tips">
+    <div class="wrap">
+      <h2>Printing them</h2>
+      <ul>
+        <li>Print at <strong>actual size</strong> or <strong>100%</strong>. &ldquo;Fit to page&rdquo; shrinks the lines and makes the small spaces fiddly.</li>
+        <li>Choose <strong>black and white</strong> or <strong>grayscale</strong>. Your printer won&rsquo;t touch its color ink.</li>
+        <li>For markers or watercolor, print on heavier paper or card stock. It stops the color soaking through and the page buckling.</li>
+        <li>The pages go from simple to detailed. Page 1 is easiest for small hands, and page 6 suits adults.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="next">
+    <div class="wrap">
+      <p>While you&rsquo;re here, the shop has printable frog care handbooks and logs, plus 3D files for things to put in the tank.</p>
+      <a class="btn btn--line" href="/#printables">See the shop</a>
+      <p class="foot">Free for personal and classroom use. Please don&rsquo;t resell or redistribute the files.
+        If you want to share them, send people to the signup on the home page instead.</p>
+    </div>
+  </section>
+</main>
+</body>
+</html>

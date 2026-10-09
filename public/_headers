@@ -12,3 +12,8 @@
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+
+# The coloring-page download is unlisted: keep the page AND the PDFs out of
+# search results. The meta tag in the HTML can't cover a PDF, this can.
+/coloring-pages-f7k2q9/*
+  X-Robots-Tag: noindex, nofollow
