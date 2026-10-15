@@ -3,7 +3,8 @@
   THE FROG FRONTIER
   =================================================================
   SETUP: everything you need to change is marked with a comment.
-  Search for SHOPIFY_CONFIG, PRODUCT_ID, VIDEO_ID, FORM_ACTION and EMAIL.
+  Search for VIDEO_ID, FORM_ACTION and EMAIL.
+  (SHOPIFY_CONFIG is unused while selling on Etsy only.)
   Full instructions are in README.md.
   =================================================================
 -->
@@ -230,6 +231,10 @@ p:last-child{margin-bottom:0;}
   color:var(--graphite);background:rgba(239,238,233,.78);}
 .foot .wrap{display:flex;flex-wrap:wrap;gap:1.3rem;justify-content:space-between;align-items:flex-end;}
 .foot a{color:var(--green-mid);}
+.follow{margin-top:.6rem;}
+.follow a{margin-left:.55rem;}
+.etsy{margin-top:.9rem;width:100%;text-align:center;}
+.link-pending{opacity:.55;pointer-events:none;}
 </style>
 </head>
 <body>
@@ -267,8 +272,8 @@ p:last-child{margin-bottom:0;}
           <a class="btn btn--solid" href="#printables">See the printables</a>
           <a class="btn btn--line" href="#free">Get the free coloring pages</a>
         </div>
-        <p class="hero__note">Everything digital arrives by email the moment you pay.
-          Nothing ships, so nothing gets lost in the mail.</p>
+        <p class="hero__note">Printables are sold through Etsy and ready to download the
+          moment you pay. Nothing ships, so nothing gets lost in the mail.</p>
       </div>
     </div>
   </section>
@@ -278,8 +283,10 @@ p:last-child{margin-bottom:0;}
     <div class="wrap">
       <div class="band__intro">
         <h2>Printables</h2>
-        <p>Print-ready PDFs. Every file comes in US Letter and A4, in full color and an
-          ink-saver version, so it works on a good printer or a tired one at the library.</p>
+        <p>Editable PDFs. Type your frog&rsquo;s details straight into the file before you
+          print, or print it blank and fill it in by hand. Every file comes in US Letter and
+          A4, in full color and an ink-saver version. Checkout is on
+          <a href="https://www.etsy.com/shop/TheFrogFrontier" data-link>my Etsy shop</a>.</p>
       </div>
 
       <ul class="shelf">
@@ -288,25 +295,19 @@ p:last-child{margin-bottom:0;}
           <div class="item__body">
             <div class="item__head">
               <h3>Frog Sitter Handbook</h3>
-              <span class="tag tag--now">Available</span>
+              <span class="tag tag--now">Now editable</span>
             </div>
-            <p>Ten pages a first-time sitter can follow without knowing anything about frogs.
-              Feeding, misting, temperature, what&rsquo;s normal, what to call you about &mdash;
-              plus a fridge card for the things they need at a glance, and a certificate for
-              the kid who did the job.</p>
+            <p>Ten pages a first-time sitter can follow without knowing anything about frogs: daily care, a feeding guide, emergency contacts, a frog log, and a certificate for the kid who did the job. Plus fridge cards with the daily jobs and emergency numbers at a glance.</p>
             <ul class="spec">
-              <li class="done">10 pages plus bonus card</li>
+              <li class="done">Editable PDF</li>
+              <li class="done">10 pages plus fridge cards</li>
               <li class="done">Letter and A4</li>
               <li class="done">Ink-saver included</li>
-              <li class="done">Works for any species</li>
             </ul>
           </div>
           <div class="item__buy">
-            <span class="price">$8.50<small>instant download</small></span>
-            <!-- PRODUCT_ID: paste the Shopify product ID for the handbook -->
-            <div class="buy" data-shopify-id="PRODUCT_ID_HANDBOOK">
-              <span class="buy__pending">Checkout not connected yet</span>
-            </div>
+            <span class="price">$10<small>instant download</small></span>
+            <a class="btn btn--solid etsy" href="https://www.etsy.com/listing/4591901030/editable-frog-sitter-handbook-fillable" data-link>Buy on Etsy</a>
           </div>
         </li>
 
@@ -314,38 +315,79 @@ p:last-child{margin-bottom:0;}
           <div class="item__body">
             <div class="item__head">
               <h3>Husbandry Log</h3>
-              <span class="tag tag--now">Available</span>
+              <span class="tag tag--now">Now editable</span>
             </div>
-            <p>The one you keep using. Dated rows for feeding, weight, shedding, misting and
-              tank cleaning, so when something looks off you have months of history instead
-              of a guess. Print a fresh stack whenever you run out.</p>
+            <p>The one you keep using. Twelve pages for feeding, temperature and humidity, weight, sheds, cleaning, health and vet visits, so when something looks off you have months of history instead of a guess.</p>
             <ul class="spec">
-              <li class="done">Undated, start any month</li>
+              <li class="done">Editable PDF</li>
+              <li class="done">12 pages</li>
               <li class="done">Letter and A4</li>
               <li class="done">Ink-saver included</li>
-              <li class="done">Reprint forever</li>
             </ul>
           </div>
           <div class="item__buy">
-            <span class="price">$5.00<small>instant download</small></span>
-            <!-- PRODUCT_ID: Husbandry Log -->
-            <div class="buy" data-shopify-id="PRODUCT_ID_LOG">
-              <span class="buy__pending">Checkout not connected yet</span>
-            </div>
+            <span class="price">$10<small>instant download</small></span>
+            <a class="btn btn--solid etsy" href="https://www.etsy.com/listing/4591928135/editable-frog-husbandry-log-fillable-pdf" data-link>Buy on Etsy</a>
           </div>
         </li>
 
         <li class="item">
           <div class="item__body">
             <div class="item__head">
-              <h3>Handbook and Log together</h3>
-              <span class="tag">In the works</span>
+              <h3>Feeding Cup Labels</h3>
+              <span class="tag tag--now">New</span>
             </div>
-            <p>Both files in one download, cheaper than buying them separately.</p>
-            <ul class="spec"><li>Being put together</li></ul>
+            <p>Portion out the crickets before you leave and label each cup, so the sitter only has to open tonight&rsquo;s. Type your frog&rsquo;s name once and it fills in on all 24 labels, with the number of feeders, dusting, and a box to tick when it&rsquo;s done.</p>
+            <ul class="spec">
+              <li class="done">Editable PDF</li>
+              <li class="done">24 labels: Mon&ndash;Sun and Day 1&ndash;12</li>
+              <li class="done">Fits 2&Prime; round labels</li>
+              <li class="done">Fits standard deli cup lids</li>
+            </ul>
           </div>
           <div class="item__buy">
-            <a class="btn btn--line" href="#free">Notify me</a>
+            <span class="price">$5<small>instant download</small></span>
+            <a class="btn btn--solid etsy" href="https://www.etsy.com/listing/4591928776/feeding-cup-labels-for-pet-sitter" data-link>Buy on Etsy</a>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="item__body">
+            <div class="item__head">
+              <h3>Frog Sitter Kit</h3>
+              <span class="tag tag--now">Save $3</span>
+            </div>
+            <p>Everything for a trip away: the Sitter Handbook, the Feeding Cup Labels and the fridge cards, in one download.</p>
+            <ul class="spec">
+              <li class="done">Handbook + Feeding Cup Labels</li>
+              <li class="done">Fridge cards included</li>
+              <li class="done">Editable PDF</li>
+              <li class="done">Letter and A4</li>
+            </ul>
+          </div>
+          <div class="item__buy">
+            <span class="price">$12<small>instead of $15</small></span>
+            <a class="btn btn--solid etsy" href="https://www.etsy.com/listing/4591921239/editable-frog-sitter-kit-care-handbook" data-link>Buy on Etsy</a>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="item__body">
+            <div class="item__head">
+              <h3>Frog Keeper Bundle</h3>
+              <span class="tag tag--now">Save $7</span>
+            </div>
+            <p>All three: the Husbandry Log for everyday keeping, plus the Sitter Handbook and Feeding Cup Labels for when you&rsquo;re away.</p>
+            <ul class="spec">
+              <li class="done">Log + Handbook + Labels</li>
+              <li class="done">Fridge cards included</li>
+              <li class="done">Editable PDF</li>
+              <li class="done">Letter and A4</li>
+            </ul>
+          </div>
+          <div class="item__buy">
+            <span class="price">$18<small>instead of $25</small></span>
+            <a class="btn btn--solid etsy" href="https://www.etsy.com/listing/4591949542/frog-keeper-bundle-editable-frog-sitter" data-link>Buy on Etsy</a>
           </div>
         </li>
 
@@ -359,8 +401,9 @@ p:last-child{margin-bottom:0;}
       <div class="band__intro">
         <h2>3D files</h2>
         <p>STL files for things that go inside a terrarium, designed around what a frog
-          actually does rather than what looks good on a shelf. Every one is watertight,
-          prints without supports, and comes with the settings I used.</p>
+          actually does rather than what looks good on a shelf. These are still being tested
+          and printed. Each one will be watertight, print without supports, and come with the
+          settings I used. Sign up below to hear when they&rsquo;re ready.</p>
       </div>
 
       <ul class="shelf">
@@ -369,25 +412,26 @@ p:last-child{margin-bottom:0;}
           <div class="item__body">
             <div class="item__head">
               <h3>Rowboat water dish</h3>
-              <span class="tag tag--now">Available</span>
+              <span class="tag">In the works</span>
             </div>
             <p>A shallow clinker-built dinghy for the tank floor. The notch in the transom
               caps the water depth so it can&rsquo;t get too deep, and the open stern lets a
               frog walk in and out instead of climbing. Plank texture is modeled into the
               hull, and the inside is left smooth because grooves hold biofilm.</p>
             <ul class="spec">
-              <li class="done">171 &times; 121 &times; 58 mm</li>
-              <li class="done">Holds about 250 ml</li>
-              <li class="done">No supports needed</li>
-              <li class="done">STL plus print notes</li>
+              <li>171 &times; 121 &times; 58 mm</li>
+              <li>Holds about 250 ml</li>
+              <li>No supports needed</li>
+              <li>STL plus print notes</li>
             </ul>
           </div>
           <div class="item__buy">
-            <span class="price">$6.00<small>STL download</small></span>
-            <!-- PRODUCT_ID: Rowboat STL -->
-            <div class="buy" data-shopify-id="PRODUCT_ID_ROWBOAT">
-              <span class="buy__pending">Checkout not connected yet</span>
-            </div>
+            <!-- When the STL is ready: put the price and Shopify buy slot back, e.g.
+                 <span class="price">$6.00<small>STL download</small></span>
+                 <div class="buy" data-shopify-id="PRODUCT_ID_ROWBOAT"></div>
+                 and change the tag above to Available, copying the green tag
+                 markup from one of the printable cards. -->
+            <a class="btn btn--line" href="#free">Notify me</a>
           </div>
         </li>
 
@@ -417,8 +461,8 @@ p:last-child{margin-bottom:0;}
         </div>
         <div class="note">
           <h3>What the license covers</h3>
-          <p>Buying an STL lets you print as many as you like for your own tanks and for
-            friends. It doesn&rsquo;t cover printing them to sell. If you run a print shop
+          <p>Once they&rsquo;re out, buying an STL lets you print as many as you like for
+            your own tanks and for friends. It doesn&rsquo;t cover printing them to sell. If you run a print shop
             and want to, email me and we&rsquo;ll work something out.</p>
         </div>
       </div>
@@ -432,6 +476,8 @@ p:last-child{margin-bottom:0;}
         <h2>Videos</h2>
         <p>Short ones, mostly showing rather than talking. Nothing loads from YouTube until
           you press play, so the page stays quick and nobody gets tracked for scrolling past.</p>
+        <!-- YOUTUBE_URL: paste your channel link in place of the # value -->
+        <p><a class="btn btn--line" href="https://www.youtube.com/@TheFrogFrontier" data-link>Subscribe on YouTube</a></p>
       </div>
 
       <ul class="films">
@@ -530,11 +576,18 @@ p:last-child{margin-bottom:0;}
         <p>Six frog coloring pages, from simple ones for small hands to detailed ones for
           grown-ups. Leave your email and you&rsquo;ll get the download link, plus a note when
           something new goes up. A few times a year at most.</p>
-        <!-- FORM_ACTION: point this at Kit, Buttondown or Mailchimp. Until then it
-             opens the visitor's mail app, which works but is clumsy. -->
-        <form action="mailto:hello@thefrogfrontier.com" method="post" enctype="text/plain">
+        <!-- FORM_ACTION: paste your mailing list's form address into data-list-action.
+             Works with either service, it detects which from the address:
+               Kit:        your form -> Publish -> HTML, copy the action="..." value
+                           e.g. https://app.kit.com/forms/1234567/subscriptions
+               Buttondown: https://buttondown.com/api/emails/embed-subscribe/YOUR-USERNAME
+             Until it's filled in, the form falls back to opening the visitor's
+             mail app, so the page never has a broken button. -->
+        <form id="signup" action="mailto:hello@thefrogfrontier.com" method="post" enctype="text/plain"
+              data-list-action="PASTE_FORM_ACTION_HERE">
           <label for="email" style="position:absolute;left:-9999px;">Email address</label>
-          <input id="email" type="email" name="email" placeholder="you@example.com" required>
+          <input id="email" type="email" name="email_address" placeholder="you@example.com"
+                 autocomplete="email" required>
           <button class="btn btn--solid" type="submit">Send me the pages</button>
         </form>
         <p class="fineprint">No spam, and you can leave any time.</p>
@@ -549,9 +602,9 @@ p:last-child{margin-bottom:0;}
 
       <details>
         <summary>How do I get the files after paying?</summary>
-        <p>A download link is emailed to you automatically as soon as the payment clears,
-          and the link stays good if you need the file again later. Check the spam folder
-          on the first one.</p>
+        <p>Etsy shows a download link as soon as your payment goes through, and emails you
+          one too. The files stay in your Etsy account under <strong>Purchases</strong>, so
+          you can download them again any time.</p>
       </details>
 
       <details>
@@ -563,9 +616,11 @@ p:last-child{margin-bottom:0;}
 
       <details>
         <summary>Can I edit the PDFs?</summary>
-        <p>They&rsquo;re finished print-ready files rather than templates, so the text
-          isn&rsquo;t editable. The pages are meant to be filled in by hand, which is the
-          point when a sitter needs to scribble a note at the tank.</p>
+        <p>Yes. Download the file first, then open it in Adobe Acrobat Reader (free),
+          Preview on a Mac, or the Files app on iPhone and iPad, and click into any blank to type. Some browser
+          and phone viewers let you type but don&rsquo;t save what you typed, so save a copy
+          before you close it. You can still print it blank and fill it in by hand, which is
+          handy when a sitter wants to jot a note at the tank.</p>
       </details>
 
       <details>
@@ -585,8 +640,8 @@ p:last-child{margin-bottom:0;}
       <details>
         <summary>Do you take refunds?</summary>
         <p>Digital files can&rsquo;t really be returned once they&rsquo;re delivered. But if
-          something won&rsquo;t open or prints wrong, email me and I&rsquo;ll fix it or
-          refund you.</p>
+          something won&rsquo;t open or prints wrong, message me on Etsy and I&rsquo;ll fix
+          it or refund you.</p>
       </details>
     </div>
   </section>
@@ -600,6 +655,11 @@ p:last-child{margin-bottom:0;}
       <p style="margin-top:.3rem;">Care guides, 3D files and videos for frog keepers.<br>
         <!-- EMAIL -->
         <a href="mailto:hello@thefrogfrontier.com">hello@thefrogfrontier.com</a></p>
+      <!-- Follow links. Paste each real link in place of its # value. -->
+      <p class="follow">Follow along at @TheFrogFrontier:
+        <a href="https://www.youtube.com/@TheFrogFrontier" data-link>YouTube</a>
+        <a href="https://x.com/TheFrogFrontier" data-link>X</a>
+        <a href="https://www.etsy.com/shop/TheFrogFrontier" data-link>Etsy</a></p>
     </div>
     <div>
       <p>&copy; <span id="yr">2026</span> The Frog Frontier. Artwork and text are original.<br>
@@ -638,6 +698,53 @@ p:last-child{margin-bottom:0;}
     storefrontAccessToken: 'YOUR_STOREFRONT_ACCESS_TOKEN',
     moneyFormat: '${{amount}}'
   };
+
+  /* Links waiting for a real URL (href still "#SOMETHING_URL"): buttons stay
+     visible but greyed out as "coming soon", plain links are hidden, so
+     nothing on the page leads nowhere. */
+  try {
+    document.querySelectorAll('a[data-link]').forEach(function (a) {
+      var h = a.getAttribute('href') || '';
+      if (/^https?:\/\//.test(h)) {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener');
+        return;
+      }
+      if (a.classList.contains('btn')) {
+        a.classList.add('link-pending');
+        a.setAttribute('aria-disabled', 'true');
+        a.removeAttribute('href');
+        if (a.classList.contains('etsy')) { a.textContent = 'Coming to Etsy soon'; }
+      } else if (a.parentNode && a.parentNode.classList && a.parentNode.classList.contains('follow')) {
+        a.hidden = true;
+      } else {
+        a.replaceWith(document.createTextNode(a.textContent));
+      }
+    });
+    var f = document.querySelector('.follow');
+    if (f && !f.querySelector('a:not([hidden])')) { f.hidden = true; }
+  } catch (e) { say('warn', '[Frog Frontier] link setup skipped:', e); }
+
+  /* Signup form: once a mailing-list address is pasted in, point the form at
+     it. Kit and Buttondown name the email field differently, and Buttondown
+     needs an extra hidden field, so set those to match the service. */
+  try {
+    var form = document.getElementById('signup');
+    var to = form && form.getAttribute('data-list-action');
+    if (to && /^https:\/\//.test(to)) {
+      form.setAttribute('action', to);
+      form.removeAttribute('enctype');
+      var field = document.getElementById('email');
+      if (/buttondown\.(com|email)/.test(to)) {
+        field.name = 'email';
+        var h = document.createElement('input');
+        h.type = 'hidden'; h.name = 'embed'; h.value = '1';
+        form.appendChild(h);
+      } else {
+        field.name = 'email_address';
+      }
+    }
+  } catch (e) { say('warn', '[Frog Frontier] signup setup skipped:', e); }
 
   var SDK = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
 
