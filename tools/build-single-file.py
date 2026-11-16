@@ -8,7 +8,7 @@ that went wrong the first time.
 
     python3 build-single-file.py
 
-Reads  public/index.html (+ public/assets, public/fonts)
+Reads  public/index.html and public/site.css (+ public/assets, public/fonts)
 Writes index-standalone.html at the top of the repo.
 
 Run it from anywhere:  python3 tools/build-single-file.py
@@ -24,7 +24,7 @@ MIME = {'.woff2': 'font/woff2', '.webp': 'image/webp', '.png': 'image/png',
 
 
 def data_uri(rel):
-    f = SITE / rel
+    f = SITE / rel.split('?')[0]          # ignore cache-busting ?v=2 suffixes
     if not f.exists():
         print('  missing, left as-is: %s' % rel, file=sys.stderr)
         return None
@@ -37,6 +37,11 @@ def main():
 
     # preload links point at files that will no longer exist as files
     html = re.sub(r'\n\s*<link rel="preload"[^>]*>', '', html)
+
+    # the shared stylesheet goes inline, so its font and image addresses
+    # get picked up by the same pass as the page's own
+    css = (SITE / 'site.css').read_text()
+    html = html.replace('<link rel="stylesheet" href="site.css">', '<style>\n' + css + '</style>')
 
     refs = set(re.findall(r"""(?:src=|href=|url\()['"]?((?:assets|fonts)/[^'")\s>]+)""", html))
     swapped = 0

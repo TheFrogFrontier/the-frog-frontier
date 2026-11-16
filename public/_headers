@@ -1,7 +1,8 @@
 # Cloudflare Pages reads this file. Images and fonts get a week of browser
-# caching; the page itself is always revalidated so edits show up immediately.
-# If you replace an image, visitors may see the old one for up to a week --
-# rename the file (logo-2.webp) to push it through straight away.
+# caching. The pages and site.css are always revalidated, so text, price and
+# design edits show up immediately.
+# If you replace an image, visitors may see the old one for up to a week.
+# Rename the file (frog-teal-2.webp) to push it through straight away.
 
 /assets/*
   Cache-Control: public, max-age=604800
@@ -13,7 +14,5 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
-# The coloring-page download is unlisted: keep the page AND the PDFs out of
-# search results. The meta tag in the HTML can't cover a PDF, this can.
-/coloring-pages-f7k2q9/*
+/check-your-inbox/*
   X-Robots-Tag: noindex, nofollow

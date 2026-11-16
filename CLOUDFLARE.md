@@ -11,20 +11,20 @@ deploy is tied to a commit you can roll back to.
 ```
 public/          <- everything Cloudflare serves. This is the site.
   index.html
+  site.css
   assets/
   fonts/
+  check-your-inbox/
   _headers
-tools/           <- never published: scripts and the source drawing
+  _redirects
+tools/           <- never published: scripts, source drawings, the brand kit
 index-standalone.html    <- the portable single-file copy
 README.md
 CLOUDFLARE.md
 ```
 
-The split matters. Cloudflare is pointed at `public/`, so the Python scripts,
-the README and your 1 MB source drawing stay in version control without being
-served to the public.
-
-A git repo is already initialised here with one commit on `main`.
+The split matters. Cloudflare is pointed at `public/`, so the scripts, the README
+and the brand kit stay in version control without being served to the public.
 
 ---
 
@@ -86,14 +86,6 @@ Add both `thefrogfrontier.com` and `www.thefrogfrontier.com`, then redirect one
 to the other so you aren't splitting search ranking across two addresses.
 Certificates are automatic and free.
 
-### Then fix one line
-
-Once the real domain is live, edit `public/index.html`, find `OG_IMAGE`, and
-replace `YOUR-DOMAIN.com` with your actual domain. Link previews in iMessage,
-Facebook and Slack need an absolute URL and show nothing at all without one.
-
-Commit and push. It deploys itself.
-
 ---
 
 ## Day to day
@@ -129,39 +121,29 @@ python3 tools/build-single-file.py
 It isn't served by the site, so a stale one breaks nothing, but it's confusing
 later if it disagrees with the live page.
 
-To redo the background at a different strength:
-
-```
-python3 tools/process-background.py --strength 0.30
-python3 tools/build-single-file.py
-```
-
 ---
 
 ## About `_headers`
 
 Cloudflare reads `public/_headers` automatically. Images and fonts get a week of
-browser caching; the page itself is always revalidated, so text and price edits
-appear immediately.
+browser caching; the pages and `site.css` are always revalidated, so text, price
+and design edits appear immediately.
 
 The trade-off: **replacing an image means returning visitors may see the old one
-for up to a week.** Rename it (`logo-2.webp`, updating the reference in
+for up to a week.** Rename it (`frog-teal-2.webp`, updating the reference in
 `index.html`) to push it through straight away.
 
 There is no Content-Security-Policy header. It's the usual next step, but
-written casually it blocks Shopify's checkout script and the YouTube embeds, and
-a broken checkout is worse than a missing header. Worth doing properly once the
-shop is actually taking money.
+written casually it blocks the YouTube embeds. Worth doing properly later.
 
 ---
 
 ## What a static host can't do
 
 **The email form** still opens the visitor's mail app. Cloudflare serves files;
-it doesn't process form posts. Point it at Kit, Buttondown or Mailchimp as
-described in the main README. Cloudflare Pages Functions could handle it, but
+it doesn't process form posts. Point it at Kit or Buttondown as described in the
+main README. Cloudflare Pages Functions could handle it, but
 that's a lot of machinery for something a mailing-list provider does free.
 
-**Checkout** runs entirely in the browser against Shopify, so it needs nothing
-from the host. That's precisely why this is built on Buy Buttons rather than a
-server.
+**Checkout** happens on Etsy. The site only links to the listings, so it needs
+nothing from the host.

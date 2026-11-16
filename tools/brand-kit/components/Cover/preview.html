@@ -1,0 +1,29 @@
+<!-- @dsCard height=300 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Sriracha&family=Neucha&display=swap">
+<style>
+  body { margin: 0; background: var(--paper); }
+  .cv { position: relative; width: 960px; height: 300px; overflow: hidden; }
+  .cv svg { position: absolute; inset: 0; }
+  .cv svg * { mix-blend-mode: multiply; }
+  .yellow { fill: var(--yellow); } .pink { fill: var(--pink); } .green { fill: var(--green); } .teal { fill: var(--teal); } .ink { fill: var(--ink); }
+  .name { position: absolute; left: 32px; bottom: 64px; margin: 0; width: 440px; color: var(--teal); font: 700 84px/.95 var(--font-display); }
+  .tag { position: absolute; left: 34px; bottom: 32px; margin: 0; width: 440px; color: var(--ink); font: 500 14px/1.4 var(--font-display); }
+</style>
+<div class="cv">
+  <svg viewBox="0 0 960 300" width="960" height="300" aria-hidden="true">
+    <!-- blocks: yellow disc r=128, green pill 192x64, pink disc r=64, teal disc r=32, ink bar 192x16 (multiples of space-16, space-8, space-4)
+         arrangement: one large yellow disc with satellites overlapping it, bleeding off the right edge
+         pattern: discs and pills from the radius scale, because the README calls the brand soft, round and printed in overlapping inks
+         steps and radii: space-4 16, space-8 32, space-16 64; radius-pill on the pill and bar, discs at half their side -->
+    <circle class="yellow" cx="704" cy="150" r="128"/>
+    <rect class="green" x="736" y="48" width="192" height="64" rx="32"/>
+    <circle class="pink" cx="800" cy="224" r="64"/>
+    <circle class="yellow" cx="912" cy="208" r="64"/>
+    <circle class="teal" cx="592" cy="64" r="32"/>
+    <rect class="ink" x="528" y="252" width="192" height="16" rx="8"/>
+    <circle class="pink" cx="544" cy="176" r="16"/>
+    <circle class="green" cx="880" cy="272" r="16"/>
+  </svg>
+  <p class="name">The Frog<br>Frontier</p>
+  <p class="tag">Small goods for frog people, printed in four loud inks.</p>
+</div>

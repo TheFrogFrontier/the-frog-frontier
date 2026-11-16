@@ -1,0 +1,34 @@
+/* The Frog Frontier - shared component styles. Needs tokens.css and the three Google fonts. */
+.ff-page { background: var(--paper); color: var(--ink); font-family: var(--font-display); }
+.ff-riso { isolation: isolate; }                       /* wrap any group of overlapping inks */
+.ff-riso > * { mix-blend-mode: multiply; }            /* inks are translucent: overlaps mix */
+.ff-grain { position: relative; }
+.ff-grain::after { content: ""; position: absolute; inset: 0; background: url("../assets/Texture/riso-grain-256.png") 0 0 / 128px 128px; pointer-events: none; border-radius: inherit; }
+.ff-disc { display: block; border-radius: 50%; aspect-ratio: 1; mix-blend-mode: multiply; }
+.ff-disc--yellow { background: var(--yellow); } .ff-disc--pink { background: var(--pink); } .ff-disc--green { background: var(--green); } .ff-disc--teal { background: var(--teal); }
+.ff-btn { display: inline-flex; align-items: center; gap: var(--space-2); padding: 12px 22px; border: 2px solid var(--ink); border-radius: var(--radius-pill); background: var(--ink); color: var(--paper); font: 600 16px/1 var(--font-display); text-decoration: none; cursor: pointer; box-shadow: var(--offset-pink); transition: transform .12s, box-shadow .12s; }
+.ff-btn:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--pink); }
+.ff-btn:active { transform: translate(5px, 5px); box-shadow: 0 0 0 var(--pink); }
+.ff-btn:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+.ff-btn--ghost { background: transparent; color: var(--ink); box-shadow: var(--offset-yellow); }
+.ff-btn--ghost:hover { box-shadow: 3px 3px 0 var(--yellow); }
+.ff-title { margin: 0; color: var(--teal); font: 700 30px/1.15 var(--font-display); text-wrap: balance; }
+.ff-title::after { content: ""; display: block; width: 96px; height: 8px; margin-top: var(--space-3); border-radius: var(--radius-pill); background: var(--pink); }
+.ff-title--center { text-align: center; } .ff-title--center::after { margin-inline: auto; }
+.ff-eyebrow { display: block; margin-bottom: var(--space-1); color: var(--ink); font: 400 18px/1.3 var(--font-script); }
+.ff-card { position: relative; display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-6); border: 2px solid var(--ink); border-radius: var(--radius-md); background: var(--paper-deep); box-shadow: var(--offset-pink); color: var(--ink); }
+.ff-card__art { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; isolation: isolate; }
+.ff-card__art > .ff-disc { position: absolute; }
+.ff-card__art > img { position: relative; max-width: 62%; max-height: 80%; mix-blend-mode: multiply; }
+.ff-card__name { margin: 0; color: var(--teal); font: 600 24px/1.2 var(--font-display); }
+.ff-card__note { margin: 0; font: 400 16px/1.3 var(--font-script); }
+.ff-card__row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin-top: auto; }
+.ff-card__price { font: 700 22px/1 var(--font-display); }
+.ff-stamp { display: inline-block; padding: 7px 14px; border: 2.5px solid var(--pink); border-radius: var(--radius-sm); outline: 1px solid var(--pink); outline-offset: -6px; color: var(--pink); font: 700 24px/1 var(--font-display); letter-spacing: .04em; text-transform: uppercase; transform: rotate(-2.2deg); }
+.ff-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr); align-items: center; gap: var(--space-6); padding: var(--space-8) var(--space-6); background: var(--paper); overflow: hidden; isolation: isolate; }
+.ff-hero__side { position: relative; aspect-ratio: 1; }
+.ff-hero__side > * { position: absolute; mix-blend-mode: multiply; }
+.ff-hero__name { margin: 0; color: var(--teal); font: 700 clamp(40px, 7vw, 84px)/.95 var(--font-display); text-align: center; text-transform: uppercase; }
+.ff-hero__est { display: flex; align-items: center; justify-content: center; gap: var(--space-4); margin-top: var(--space-4); color: var(--ink); font: 400 20px/1 var(--font-script); }
+.ff-hero__est::before, .ff-hero__est::after { content: ""; flex: 0 1 120px; height: 8px; border-radius: var(--radius-pill); background: var(--pink); }
+@media (max-width: 640px) { .ff-hero { grid-template-columns: 1fr; } .ff-hero__side { max-width: 240px; margin-inline: auto; width: 100%; } .ff-hero__side--leaves { display: none; } }

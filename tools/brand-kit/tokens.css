@@ -1,0 +1,39 @@
+/* The Frog Frontier - tokens. Generated from tokens.json. */
+:root {
+  --paper: #F4EFE2;
+  --paper-deep: #EAE2CC;
+  --ink: #00595F;
+  --teal: #00838A;
+  --yellow: #FFE800;
+  --green: #67B346;
+  --pink: #FF48B0;
+  --over-orange: #FF4100;
+  --over-green: #67A300;
+  --over-navy: #00255F;
+  --line: #3B3A37;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-pill: 999px;
+  --offset-pink: 5px 5px 0 #FF48B0;
+  --offset-yellow: 5px 5px 0 #FFE800;
+  --font-display: "Fredoka", "Nunito", system-ui, sans-serif;
+  --font-script: "Sriracha", "Comic Sans MS", cursive;
+  --font-hand: "Neucha", "Comic Sans MS", cursive;
+}
+.display { font-family: var(--font-display); font-size: 72px; line-height: 0.95; font-weight: 700; letter-spacing: 0.01em; }
+.h1 { font-family: var(--font-display); font-size: 44px; line-height: 1.05; font-weight: 700; }
+.h2 { font-family: var(--font-display); font-size: 30px; line-height: 1.15; font-weight: 700; }
+.h3 { font-family: var(--font-display); font-size: 24px; line-height: 1.2; font-weight: 600; }
+.body { font-family: var(--font-display); font-size: 17px; line-height: 27px; font-weight: 400; }
+.small { font-family: var(--font-display); font-size: 14px; line-height: 21px; font-weight: 500; }
+.label { font-family: var(--font-display); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; }
+.script { font-family: var(--font-script); font-size: 20px; line-height: 26px; font-weight: 400; }
+.hand { font-family: var(--font-hand); font-size: 22px; line-height: 26px; font-weight: 400; }
