@@ -125,6 +125,8 @@ strong{font-weight:600;}
 .nav a{font:500 16px/1 var(--font-display);text-decoration:none;padding-block:6px;border-bottom:3px solid transparent;}
 .nav a:hover{border-bottom-color:var(--pink);}
 @media (max-width:820px){.nav .hide-md{display:none;}}
+@media (max-width:440px){.nav .hide-sm{display:none;}}
+@media (max-width:360px){.nav .hide-xs{display:none;}}
 @media (max-width:420px){.mark span.mark__name{font-size:15px;}.nav{gap:10px;}.nav a{font-size:14px;}.mark__logo{width:40px;height:40px;}}
 
 /* ---- hero additions (the kit allows one line of text and a button under Est.) */
@@ -173,6 +175,8 @@ strong{font-weight:600;}
 .note{padding:var(--space-6);border:2px solid var(--ink);border-radius:var(--radius-md);
   background:var(--paper-deep);box-shadow:var(--offset-yellow);}
 .section--deep .note{background:var(--paper);}
+.section--deep .ff-card,.section--deep .sample{background:var(--paper);}
+.card__photo{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:2px solid var(--ink);border-radius:var(--radius-sm);box-shadow:var(--offset-yellow);}
 .note p{font-size:16px;line-height:25px;}
 .stack{display:grid;gap:var(--space-8);}
 .split{display:grid;gap:var(--space-8) var(--space-12);grid-template-columns:minmax(0,1fr);}

@@ -6,21 +6,21 @@
   Brand colors, type and components live in site.css. Do not add
   colors or fonts here.
 
-  Things you may still need to fill in: search for VIDEO_ID,
-  FORM_ACTION and EMAIL.
+  Things you may still need to fill in: search for FORM_ACTION
+  and EMAIL.
   =================================================================
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Frog Frontier: printable care guides, 3D files and videos for frog keepers</title>
-<meta name="description" content="Editable printable care handbooks and logs, 3D printable terrarium accessories, and videos for people who keep frogs. Instant downloads.">
+<title>The Frog Frontier: frog care printables, handmade frogs, 3D files and videos</title>
+<meta name="description" content="Editable printable care handbooks and logs, handmade polymer clay frog ornaments, 3D printable terrarium accessories, and videos for people who keep frogs.">
 <meta name="theme-color" content="#F4EFE2">
 <link rel="icon" href="assets/favicon.ico?v=2" sizes="any">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
 <meta property="og:title" content="The Frog Frontier">
-<meta property="og:description" content="Small goods for frog people: printable care guides, 3D files and videos.">
+<meta property="og:description" content="Small goods for frog people: printable care guides, handmade frogs, 3D files and videos.">
 <meta property="og:image" content="https://thefrogfrontier.com/assets/social-1200x630.jpg">
 <meta property="og:type" content="website">
 <link rel="preload" href="fonts/Fredoka.woff2" as="font" type="font/woff2" crossorigin>
@@ -39,9 +39,10 @@
       <span class="mark__name">The Frog<br>Frontier</span>
     </a>
     <nav class="nav" aria-label="Sections">
+      <a href="#handmade">Handmade</a>
       <a href="#printables">Printables</a>
-      <a href="#files">3D files</a>
-      <a href="#videos">Videos</a>
+      <a href="#files" class="hide-sm">3D files</a>
+      <a href="#videos" class="hide-xs">Videos</a>
       <a href="#about" class="hide-md">About</a>
     </nav>
   </div>
@@ -63,15 +64,15 @@
       <p class="ff-hero__est">Est. 2026</p>
       <div class="hero__copy">
         <p class="hero__lead">Frog care, written down.</p>
-        <p>Printable handbooks and logs, 3D files for things that go inside the tank, and
-          videos showing how it all works. Made by one person who keeps frogs, for the people
+        <p>Printable handbooks and logs, little frogs made by hand, 3D files for things that
+          go inside the tank, and videos showing how it all works. Made by one person who keeps frogs, for the people
           who keep them and the sitters left holding the misting bottle.</p>
         <div class="hero__actions">
           <a class="ff-btn" href="#printables">See the printables</a>
           <a class="ff-btn ff-btn--ghost" href="#updates">Get new-release emails</a>
         </div>
-        <p class="hero__note">Printables are sold through Etsy and ready to download the
-          moment you pay. Nothing ships, so nothing gets lost in the mail.</p>
+        <p class="hero__note">Everything is sold through my Etsy shop. Printables are ready to
+          download the moment you pay, and handmade pieces ship within the US.</p>
       </div>
     </div>
 
@@ -83,8 +84,46 @@
     </div>
   </header>
 
+  <!-- ==================================================== HANDMADE -->
+  <section class="section section--deep" id="handmade">
+    <div class="wrap split">
+      <div>
+        <span class="ff-eyebrow">New for Christmas</span>
+        <h2 class="ff-title">Handmade frogs</h2>
+        <p style="margin-top:var(--space-6)">Tiny frogs I sculpt, bake and finish by hand in
+          Maryland, a few at a time. No two come out exactly alike.</p>
+        <p>They ship within a week of your order, within the US only. For delivery before
+          Christmas, order by December 8.</p>
+        <p class="fineprint">These are decorations, not toys. They&rsquo;re small enough to
+          swallow, so keep them away from young children and pets.</p>
+      </div>
+
+      <article class="ff-card">
+        <img class="card__photo" src="assets/ornaments-trio.webp" width="1200" height="675" loading="lazy"
+             alt="Three small green polymer clay tree frogs in a row: one in a red Santa hat, one in a red scarf, one with a red bow, each with a gold hook.">
+        <div class="card__top">
+          <h3 class="ff-card__name">Christmas Tree Frogs</h3>
+          <span class="tag">New</span>
+        </div>
+        <p class="ff-card__note">Set of 3 ornaments</p>
+        <p class="ff-card__blurb">Three tiny White&rsquo;s tree frogs in polymer clay, dressed for
+          Christmas: one in a Santa hat, one in a red scarf and one in a red bow. Each has a
+          gold-tone hook, and the set comes packed in a kraft gift tube.</p>
+        <ul class="spec">
+          <li>About &frac34; in (20 mm) each</li>
+          <li>Free US shipping</li>
+          <li>Order by Dec 8 for Christmas</li>
+        </ul>
+        <div class="ff-card__row">
+          <span class="ff-card__price">$55<small>set of 3</small></span>
+          <a class="ff-btn" href="https://www.etsy.com/listing/4619547206/handmade-polymer-clay-tree-frog" data-link>Buy on Etsy</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- ==================================================== PRINTABLES -->
-  <section class="section section--deep" id="printables">
+  <section class="section" id="printables">
     <div class="wrap">
       <div class="section__intro">
         <span class="ff-eyebrow">Now editable</span>
@@ -101,7 +140,7 @@
       <ul class="grid grid--products">
 
         <li>
-          <article class="ff-card" style="background:var(--paper)">
+          <article class="ff-card">
             <div class="ff-card__art ff-grain" aria-hidden="true">
               <span class="ff-disc ff-disc--yellow" style="height:92%"></span>
               <span class="ff-disc ff-disc--pink" style="height:36%;right:14%;bottom:2%"></span>
@@ -129,7 +168,7 @@
         </li>
 
         <li>
-          <article class="ff-card" style="background:var(--paper)">
+          <article class="ff-card">
             <div class="ff-card__art ff-grain" aria-hidden="true">
               <span class="ff-disc ff-disc--yellow" style="height:70%;left:12%"></span>
               <span class="ff-disc ff-disc--pink" style="height:54%;right:10%;bottom:4%"></span>
@@ -156,7 +195,7 @@
         </li>
 
         <li>
-          <article class="ff-card" style="background:var(--paper)">
+          <article class="ff-card">
             <div class="ff-card__art ff-grain" aria-hidden="true">
               <span class="ff-disc ff-disc--yellow" style="height:92%"></span>
               <span class="ff-disc ff-disc--green" style="height:34%;left:14%;top:2%"></span>
@@ -184,7 +223,7 @@
         </li>
 
         <li class="wide">
-          <article class="ff-card" style="background:var(--paper)">
+          <article class="ff-card">
             <div class="ff-card__art ff-grain" aria-hidden="true">
               <span class="ff-disc ff-disc--yellow" style="height:74%;left:22%"></span>
               <span class="ff-disc ff-disc--pink" style="height:48%;right:20%;bottom:2%"></span>
@@ -210,7 +249,7 @@
         </li>
 
         <li class="wide">
-          <article class="ff-card" style="background:var(--paper)">
+          <article class="ff-card">
             <div class="ff-card__art ff-grain" aria-hidden="true">
               <span class="ff-disc ff-disc--yellow" style="height:92%"></span>
               <span class="ff-disc ff-disc--pink" style="height:30%;left:26%;bottom:0"></span>
@@ -240,7 +279,7 @@
   </section>
 
   <!-- ==================================================== 3D FILES -->
-  <section class="section" id="files">
+  <section class="section section--deep" id="files">
     <img class="leafy" src="assets/leaf-banana.webp" alt="" width="900" height="272" loading="lazy"
          style="width:420px;right:-262px;top:24px;transform:rotate(-58deg)">
     <div class="wrap">
@@ -318,58 +357,32 @@
   </section>
 
   <!-- ==================================================== VIDEOS -->
-  <section class="section section--deep" id="videos">
+  <section class="section" id="videos">
     <div class="wrap">
       <div class="section__intro">
         <span class="ff-eyebrow">Short ones</span>
         <h2 class="ff-title">Videos</h2>
-        <p>Short ones, mostly showing rather than talking. Nothing loads from YouTube until
-          you press play, so the page stays quick and nobody gets tracked for scrolling past.</p>
+        <p>Short ones, mostly showing rather than talking. The YouTube player only loads
+          when you press play, so the page stays quick.</p>
         <p><a class="ff-btn ff-btn--ghost" href="https://www.youtube.com/@TheFrogFrontier" data-link>Subscribe on YouTube</a></p>
       </div>
 
-      <!-- VIDEO_ID: replace each data-yt value, and the same value in the img address
-           on the next line, with the 11-character YouTube ID. -->
-      <ul class="grid grid--three">
+      <!-- To add a video: copy the <li> below and change the 11-character YouTube ID in
+           both data-yt and the img address, plus the aria-label, heading and blurb. -->
+      <ul class="grid">
         <li>
           <div class="film">
-            <button class="film__frame" data-yt="VIDEO_ID_1" aria-label="Play: Setting up a tank a sitter can manage">
+            <button class="film__frame" data-yt="EP2jCnmTftc" aria-label="Play: Frogman, Episode 1">
               <span class="ff-disc ff-disc--yellow" style="width:46%;left:-8%;top:-22%"></span>
               <span class="ff-disc ff-disc--pink" style="width:22%;right:10%;bottom:-14%"></span>
-              <img src="https://i.ytimg.com/vi/VIDEO_ID_1/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+              <img src="https://i.ytimg.com/vi/EP2jCnmTftc/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
               <span class="film__play"></span>
             </button>
             <div class="film__body">
-              <h3 class="subhead">A tank a sitter can manage</h3>
-              <p>What to change in the week before you leave, so someone else can keep it running.</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="film">
-            <button class="film__frame" data-yt="VIDEO_ID_2" aria-label="Play: Printing the rowboat water dish">
-              <span class="ff-disc ff-disc--yellow" style="width:40%;right:-6%;top:-18%"></span>
-              <span class="ff-disc ff-disc--green" style="width:20%;left:8%;bottom:-12%"></span>
-              <img src="https://i.ytimg.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
-              <span class="film__play"></span>
-            </button>
-            <div class="film__body">
-              <h3 class="subhead">Printing the rowboat dish</h3>
-              <p>Start to finish on a bed-slinger, including the settings that make the planks read.</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="film">
-            <button class="film__frame" data-yt="VIDEO_ID_3" aria-label="Play: Filling in the handbook">
-              <span class="ff-disc ff-disc--yellow" style="width:44%;left:6%;bottom:-26%"></span>
-              <span class="ff-disc ff-disc--pink" style="width:18%;right:14%;top:-8%"></span>
-              <img src="https://i.ytimg.com/vi/VIDEO_ID_3/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
-              <span class="film__play"></span>
-            </button>
-            <div class="film__body">
-              <h3 class="subhead">Filling in the handbook</h3>
-              <p>Ten pages, ten minutes, and the two blanks people most often get wrong.</p>
+              <h3 class="subhead">Frogman: Episode 1</h3>
+              <p>An ordinary pet-store frog gets stolen, zapped in a secret lab and turned into
+                Frogman, the strongest frog in the city. A stop-motion comic drawn by hand in
+                markers and colored pencils.</p>
             </div>
           </div>
         </li>
@@ -378,7 +391,7 @@
   </section>
 
   <!-- ==================================================== ABOUT -->
-  <section class="section" id="about">
+  <section class="section section--deep" id="about">
     <img class="leafy" src="assets/leaf-frond.webp" alt="" width="839" height="474" loading="lazy"
          style="width:400px;left:-300px;top:40px;transform:rotate(62deg)">
     <div class="wrap split">
@@ -426,7 +439,7 @@
   </section>
 
   <!-- ==================================================== EMAIL UPDATES -->
-  <section class="section section--deep" id="updates">
+  <section class="section" id="updates">
     <div class="wrap">
       <div class="signup">
         <div class="signup__art ff-grain" aria-hidden="true">
@@ -461,7 +474,7 @@
   </section>
 
   <!-- ==================================================== QUESTIONS -->
-  <section class="section">
+  <section class="section section--deep">
     <div class="wrap">
       <div class="faq">
         <div class="section__intro">
@@ -507,10 +520,20 @@
         </details>
 
         <details>
+          <summary>Do you ship outside the US?</summary>
+          <p>Not yet. Handmade pieces ship within the United States only. Printables are
+            downloads, so they work anywhere.</p>
+        </details>
+
+        <details>
           <summary>Do you take refunds?</summary>
           <p>Digital files can&rsquo;t really be returned once they&rsquo;re delivered. But if
             something won&rsquo;t open or prints wrong, message me on Etsy and I&rsquo;ll fix
             it or refund you.</p>
+          <p>Handmade pieces can be returned within 14 days of delivery. You pay the return
+            shipping, and please send them back in their original tube so they arrive safely.
+            If an order arrives damaged, message me on Etsy with a photo and I&rsquo;ll make
+            it right.</p>
         </details>
       </div>
     </div>
@@ -522,7 +545,7 @@
   <div class="wrap">
     <div>
       <p class="foot__name">The Frog Frontier</p>
-      <p>Care guides, 3D files and videos for frog keepers.<br>
+      <p>Care guides, handmade frogs, 3D files and videos for frog keepers.<br>
         <!-- EMAIL -->
         <a href="mailto:hello@thefrogfrontier.com">hello@thefrogfrontier.com</a></p>
       <p class="follow">Follow along at @TheFrogFrontier:

@@ -51,7 +51,7 @@ because the image is blended onto the yellow disc.
 
 Everything is in `public/index.html`.
 
-**Products.** Each product is one `<li>` in the Printables section, with its name,
+**Printables.** Each printable is one `<li>` in the Printables section, with its name,
 script note, description, price and Etsy link. Prices are typed into the page, so
 when you change a price on Etsy, change it here too. The "instead of $15" and
 "Save $3" lines on the two bundles are worked out from the single-item prices.
@@ -60,10 +60,15 @@ when you change a price on Etsy, change it here too. The "instead of $15" and
 swap its "Notify me" button for a "Buy on Etsy" button; a comment in the card shows
 where.
 
-**Videos.** Find each `VIDEO_ID_1` (it appears twice per video: in `data-yt` and in
-the thumbnail address) and replace it with the 11-character YouTube ID. Update the
-`aria-label`, heading and blurb to match. Nothing loads from YouTube until someone
-presses play. To add a video, copy one `<li>` block in the list.
+**Handmade.** The Christmas Tree Frogs ornament set has its own section near the top,
+with its price and Etsy link. When the season is over or the set sells out, delete
+that `<section id="handmade">` and the "Handmade" link in the top bar, or swap in the
+next handmade piece.
+
+**Videos.** Each video is one `<li>` in the Videos section. To add one, copy the
+existing block and put the 11-character YouTube ID (the part after `watch?v=`) in
+both `data-yt` and the thumbnail address, then update the `aria-label`, heading and
+blurb. The player only loads when someone presses play.
 
 **Signup form.** Find `FORM_ACTION` and paste your mailing list's form address into
 `data-list-action`. It works with Kit or Buttondown and detects which from the
