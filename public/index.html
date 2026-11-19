@@ -134,18 +134,14 @@
           <a href="https://www.etsy.com/shop/TheFrogFrontier" data-link>my Etsy shop</a>.</p>
       </div>
 
-      <!-- Product photos don't exist yet, so each card shows a leaf as a stand-in,
-           as the brand kit suggests. To use a real photo, replace the <img> inside
-           ff-card__art (a cut-out on a transparent or white ground works best). -->
+      <!-- Each card's picture is its Etsy listing photo, saved square in assets/ as
+           printable-*.webp. To change one, replace that file (or point the <img> at a new one). -->
       <ul class="grid grid--products">
 
         <li>
           <article class="ff-card">
-            <div class="ff-card__art ff-grain" aria-hidden="true">
-              <span class="ff-disc ff-disc--yellow" style="height:92%"></span>
-              <span class="ff-disc ff-disc--pink" style="height:36%;right:14%;bottom:2%"></span>
-              <img src="assets/leaf-monstera.webp" alt="" width="680" height="653" loading="lazy" style="--tilt:-12deg">
-            </div>
+            <img class="card__photo card__photo--square" src="assets/printable-handbook.webp" width="800" height="800" loading="lazy"
+                 alt="The Frog Sitter Handbook: pages for meeting the frog, a daily care checklist and who to call, filled in with sample details.">
             <div class="card__top">
               <h3 class="ff-card__name">Frog Sitter Handbook</h3>
               <span class="tag">Now editable</span>
@@ -169,11 +165,8 @@
 
         <li>
           <article class="ff-card">
-            <div class="ff-card__art ff-grain" aria-hidden="true">
-              <span class="ff-disc ff-disc--yellow" style="height:70%;left:12%"></span>
-              <span class="ff-disc ff-disc--pink" style="height:54%;right:10%;bottom:4%"></span>
-              <img src="assets/leaf-frond.webp" alt="" width="839" height="474" loading="lazy" style="--tilt:14deg;max-width:74%">
-            </div>
+            <img class="card__photo card__photo--square" src="assets/printable-log.webp" width="800" height="800" loading="lazy"
+                 alt="The Frog Husbandry Log: the cover, an environment log and a feeding log, filled in with sample readings.">
             <div class="card__top">
               <h3 class="ff-card__name">Husbandry Log</h3>
               <span class="tag">Now editable</span>
@@ -196,11 +189,8 @@
 
         <li>
           <article class="ff-card">
-            <div class="ff-card__art ff-grain" aria-hidden="true">
-              <span class="ff-disc ff-disc--yellow" style="height:92%"></span>
-              <span class="ff-disc ff-disc--green" style="height:34%;left:14%;top:2%"></span>
-              <img src="assets/leaf-heart.webp" alt="" width="436" height="434" loading="lazy" style="--tilt:10deg;max-width:44%">
-            </div>
+            <img class="card__photo card__photo--square" src="assets/printable-labels.webp" width="800" height="800" loading="lazy"
+                 alt="A sheet of round feeding cup labels, one for each day of the week, with two of them on deli cup lids.">
             <div class="card__top">
               <h3 class="ff-card__name">Feeding Cup Labels</h3>
               <span class="tag">New</span>
@@ -224,11 +214,8 @@
 
         <li class="wide">
           <article class="ff-card">
-            <div class="ff-card__art ff-grain" aria-hidden="true">
-              <span class="ff-disc ff-disc--yellow" style="height:74%;left:22%"></span>
-              <span class="ff-disc ff-disc--pink" style="height:48%;right:20%;bottom:2%"></span>
-              <img src="assets/leaf-banana.webp" alt="" width="900" height="272" loading="lazy" style="--tilt:-20deg;max-width:66%">
-            </div>
+            <img class="card__photo card__photo--square" src="assets/printable-kit.webp" width="800" height="800" loading="lazy"
+                 alt="The Frog Sitter Kit: the sitter handbook cover beside a sheet of feeding cup labels and two labeled cup lids.">
             <div class="card__top">
               <h3 class="ff-card__name">Frog Sitter Kit</h3>
               <span class="tag">Save $3</span>
@@ -250,11 +237,8 @@
 
         <li class="wide">
           <article class="ff-card">
-            <div class="ff-card__art ff-grain" aria-hidden="true">
-              <span class="ff-disc ff-disc--yellow" style="height:92%"></span>
-              <span class="ff-disc ff-disc--pink" style="height:30%;left:26%;bottom:0"></span>
-              <img src="assets/leaf-monstera.webp" alt="" width="680" height="653" loading="lazy" style="--tilt:24deg;max-width:40%">
-            </div>
+            <img class="card__photo card__photo--square" src="assets/printable-bundle.webp" width="800" height="800" loading="lazy"
+                 alt="The keeper&rsquo;s bundle: the husbandry log and sitter handbook covers with two labeled feeding cup lids.">
             <div class="card__top">
               <h3 class="ff-card__name">Frog Keeper Bundle</h3>
               <span class="tag">Save $7</span>
@@ -369,7 +353,38 @@
 
       <!-- To add a video: copy the <li> below and change the 11-character YouTube ID in
            both data-yt and the img address, plus the aria-label, heading and blurb. -->
-      <ul class="grid grid--three">
+      <ul class="grid">
+        <li>
+          <div class="film">
+            <button class="film__frame" data-yt="-5-kl3lgSmk" aria-label="Play: Frogman, Episode 3">
+              <span class="ff-disc ff-disc--yellow" style="width:46%;left:-8%;top:-22%"></span>
+              <span class="ff-disc ff-disc--pink" style="width:22%;right:10%;bottom:-14%"></span>
+              <img src="https://i.ytimg.com/vi/-5-kl3lgSmk/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+              <span class="film__play"></span>
+            </button>
+            <div class="film__body">
+              <h3 class="subhead">Frogman: Episode 3</h3>
+              <p>Dr. Grime breaks out of jail with a donut, a tiny alien named Blue lands in the
+                city, and Frogman needs his friends (and a very stinky sock) to beat a giant
+                slime monster.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="film">
+            <button class="film__frame" data-yt="4AIvnbysb-Y" aria-label="Play: How to draw Frogman">
+              <span class="ff-disc ff-disc--yellow" style="width:46%;left:-8%;top:-22%"></span>
+              <span class="ff-disc ff-disc--pink" style="width:22%;right:10%;bottom:-14%"></span>
+              <img src="https://i.ytimg.com/vi/4AIvnbysb-Y/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+              <span class="film__play"></span>
+            </button>
+            <div class="film__body">
+              <h3 class="subhead">How to Draw Frogman</h3>
+              <p>Draw Frogman step by step with a black marker and green and red colored pencils.
+                Pause whenever you need to.</p>
+            </div>
+          </div>
+        </li>
         <li>
           <div class="film">
             <button class="film__frame" data-yt="WEqPIaZI05c" aria-label="Play: Clean with me">

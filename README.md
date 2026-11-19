@@ -42,10 +42,11 @@ a risograph print look in four inks on cream paper.
 
 ### Product pictures
 
-There are no product photos yet, so each product card shows a leaf on the discs as
-a stand-in, as the kit suggests. To use a real photo, replace the `<img>` inside
-that card's `ff-card__art`. A cut-out on a transparent or white ground works best,
-because the image is blended onto the yellow disc.
+Each printable card shows its Etsy listing photo, saved square in `public/assets/`
+as `printable-handbook.webp`, `-log`, `-labels`, `-kit` and `-bundle` (800 px). The
+ornament card uses `ornaments-trio.webp`. Larger copies are in `tools/`. To change a
+picture, replace the file under a new name and update the `<img>` in `index.html`,
+because images are cached for a week.
 
 ## Editing content
 

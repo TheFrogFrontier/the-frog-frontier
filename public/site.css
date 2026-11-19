@@ -177,6 +177,7 @@ strong{font-weight:600;}
 .section--deep .note{background:var(--paper);}
 .section--deep .ff-card,.section--deep .sample{background:var(--paper);}
 .card__photo{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:2px solid var(--ink);border-radius:var(--radius-sm);box-shadow:var(--offset-yellow);}
+.card__photo--square{aspect-ratio:1/1;}
 .note p{font-size:16px;line-height:25px;}
 .stack{display:grid;gap:var(--space-8);}
 .split{display:grid;gap:var(--space-8) var(--space-12);grid-template-columns:minmax(0,1fr);}
