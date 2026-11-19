@@ -71,9 +71,10 @@ existing block and put the 11-character YouTube ID (the part after `watch?v=`) i
 both `data-yt` and the thumbnail address, then update the `aria-label`, heading and
 blurb. The player only loads when someone presses play.
 
-**Signup form.** Find `FORM_ACTION` and paste your mailing list's form address into
-`data-list-action`. It works with Kit or Buttondown and detects which from the
-address. Until then the form opens the visitor's mail app. In the mailing service,
+**Signup form.** It sends signups to Buttondown, at
+`https://buttondown.com/api/emails/embed-subscribe/thefrogfrontier` (the
+`data-list-action` on the form, found by searching for `FORM_ACTION`). To switch to
+another list, paste its form address there; Kit addresses work too. In Buttondown,
 set "after subscribing" to `https://thefrogfrontier.com/check-your-inbox/` and
 "after confirming" to the home page, `https://thefrogfrontier.com/`.
 
